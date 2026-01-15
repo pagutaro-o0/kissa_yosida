@@ -1,0 +1,345 @@
+/* =========================
+  ベース
+========================= */
+
+body {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", serif;
+  background: #faf7f2;
+  color: #4a3f35;
+}
+
+.center {
+  text-align: center;
+}
+
+/* =========================
+  ヘッダー
+========================= */
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.site-title {
+  font-size: 48px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.site-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: #4a3f35;
+  margin: 16px auto 0;
+}
+
+.hero {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+}
+
+/* =========================
+  セクション共通
+========================= */
+
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* =========================
+  オーナー
+========================= */
+
+.owner-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.owner-box img {
+  width: 160px;
+  border-radius: 12px;
+}
+
+.owner .intro {
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+/* =========================
+  メニュー
+========================= */
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.item p {
+  margin-top: 8px;
+}
+
+/* おすすめ表示 */
+.badge {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: #8b3a3a;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* おすすめ無し時の高さ維持 */
+.placeholder {
+  visibility: hidden;
+}
+
+/* 写真＋おすすめ縦並び（右寄せ） */
+.photo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* =========================
+  アクセス
+========================= */
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.info-text {
+  max-width: 300px;
+}
+
+.info-map {
+  width: 350px;
+}
+
+.info-map iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  border: none;
+}
+
+/* =========================
+  改行制御
+========================= */
+
+.sp-only {
+  display: none;
+}
+
+.pc-only {
+  display: inline;
+}
+
+/* =========================
+  スマホ対応
+========================= */
+
+@media (max-width: 768px) {
+
+  /* タイトル */
+  .site-title {
+    font-size: 32px;
+    letter-spacing: 0.1em;
+  }
+
+  .header {
+    padding: 40px 16px;
+  }
+
+  /* メニュー：1列 */
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .item img {
+    height: 180px;
+  }
+
+  /* アクセス：縦並び */
+  .info {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .info-text {
+    max-width: none;
+    text-align: center;
+  }
+
+  .info-map {
+    width: 100%;
+  }
+
+  .info-map iframe {
+    height: 220px;
+  }
+
+  /* 改行切り替え */
+  .sp-only {
+    display: inline;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  /* オーナー文章 */
+  .owner .intro {
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+
+  .owner-box {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 768px) {
+
+  .owner-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .owner-box img {
+    width: 140px;      /* 少しだけ小さく */
+  }
+
+  .owner .intro {
+    margin-top: 16px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* 店の写真と次のセクションの間を詰める */
+  .section:first-of-type {
+    padding-top: 28px;   /* ← ここを好みで調整（24〜40px） */
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* 喫茶店についての文章の下余白を詰める */
+  .section .intro {
+    margin-bottom: 2px;   /* 8〜16pxで調整OK */
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* 「喫茶店について」直後のセクションの上余白を削る */
+  .section + .section {
+    padding-top: 24px;   /* デフォルト60px → 24px */
+  }
+
+}
+.feature-list {
+  list-style: none;      /* ・を消す */
+  padding: 0;
+  margin: 0;
+  text-align: center;    /* 中央揃え */
+}
+
+.feature-list li {
+  margin-bottom: 10px;   /* 行間 */
+  font-size: 14px;
+}
+.owner {
+  background: #f3efe9;   /* 少しだけ濃いベージュ */
+}
+.to-top {
+  position: fixed;
+  right: 20px;        /* 右端に寄せる */
+  bottom: 20px;
+  width: 52px;        /* 少し大きく */
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(74, 63, 53, 0.85);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 52px;
+  font-size: 22px;    /* 矢印も大きく */
+  opacity: 0.8;
+  z-index: 1000;      /* 他より前に */
+}
+
+.to-top:hover {
+  opacity: 1;
+}
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 20px;
+
+  padding: 10px 18px;      /* 横長になるポイント */
+  border-radius: 6px;      /* 角丸（四角すぎない） */
+
+  background: rgba(74, 63, 53, 0.9);
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 14px;
+  letter-spacing: 0.1em;
+
+  opacity: 0.85;
+  z-index: 1000;
+}
+.owner {
+  background: none; /* もし入っていたら消す */
+}
+
+.owner-inner {
+  background: #f3efe9;
+  max-width: 900px;   /* 背景の横幅 */
+  margin: 0 auto;     /* 中央寄せ */
+  padding: 40px 24px; /* 内側余白 */
+  border-radius: 12px;
+}
+
+.to-top:hover {
+  opacity: 1;
+}
