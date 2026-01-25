@@ -70,12 +70,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  margin-top: 32px;
 }
 
 .owner-photo {
   position: relative;   /* ←これが一番重要 */
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
 }
 
 .photo {
@@ -253,7 +254,7 @@ body {
   .owner-box {
     flex-direction: row;   /* ← 横並び */
     align-items: center;
-    gap: 16px;
+    gap: 24px;
   }
 
   .owner-photo {
@@ -404,12 +405,11 @@ html, body {
 .master-title {
   text-align: center;
   font-size: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 }
 
 .master-text {
   font-style: italic;
-  font-size: 16px;
 }
 .item img {
   transition: transform 0.3s, box-shadow 0.3s;
@@ -422,4 +422,16 @@ html, body {
 .item {
   overflow: hidden;
   border-radius: 12px;
+}
+.item {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+@media (min-width: 769px) {
+  .owner .intro {
+    text-align: left;      /* 左揃え */
+    max-width: 500px;      /* 幅を指定すると見た目がきれい */
+    margin: 0;             /* 中央寄せ余白をリセット */
+  }
 }
