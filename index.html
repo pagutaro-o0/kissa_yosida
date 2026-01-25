@@ -28,10 +28,16 @@
 
   <!-- ヘッダー -->
   <header class="header">
-    <h1 class="site-title">喫茶吉田</h1>
-    <p class="subtitle">〜1974年創業の老舗喫茶店〜</p>
-    <img src="images/hero.jpg" alt="店内写真" class="hero">
-  </header>
+  <h1 class="site-title">喫茶吉田</h1>
+  <p class="subtitle">〜1974年創業の老舗喫茶店〜</p>
+
+  <div class="hero">
+    <img class="slide active" src="images/hero1.jpg">
+    <img class="slide" src="images/hero2.jpg">
+    <img class="slide" src="images/hero3.jpg">
+  </div>
+</header>
+
 
   <!-- この喫茶店について -->
   <section class="section">
@@ -133,16 +139,26 @@
   </div>
 </section>
   <!-- オーナーより -->
-  <section class="section owner">
-    <div class="owner-inner">
-  <h2>オーナーより</h2>
-  <div class="owner-box">
-    <img src="images/owner.jpg" alt="オーナー">
-    <p class="center intro">
-      実際にお話を聞いて、<br class="pc-only">
-      その人の好みに合った豆を挽いて淹れています。
-    </p>
+<section class="section owner">
+  <div class="owner-inner">
+    <h2>マスターより</h2>
+
+    <div class="owner-box">
+      <div class="owner-photo">
+        <img src="images/owner1.jpg" alt="オーナー" class="photo base">
+        <img src="images/owner2.jpg" alt="オーナー笑顔" class="photo hover">
+      </div>
+      <p class="center intro">
+        実際にお話を聞いて、<br class="pc-only">
+        その人の好みに合った豆を挽いて淹れています。
+      </p>
     </div>
+
+    <hr class="divider">
+
+    <h3 class="master-title">一服の言葉</h3>
+    <p id="masterWord" class="center master-text"></p>
+
   </div>
 </section>
 
@@ -153,3 +169,5 @@
   <a href="#top" class="to-top">TOP</a>
 </body>
 </html>
+<script src="script.js"></script>
+
